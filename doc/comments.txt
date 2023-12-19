@@ -1,0 +1,48 @@
+14-Nov-2021==========swarnendu
+1)http://localhost:8080/api/auth/rolelist
+response will be
+{
+    "label": "Manufacturer User",
+    "name": "ManufacturerUser",
+    "user_type_id": 4
+  }
+(Koustav - Done)
+  2) http://localhost:8080/api/auth/signup
+
+  sending modifiedBy/createdBy
+(Koustav - createdBy and updatedBy  -- Done)
+
+  3) create a service -- need later
+
+  >>>>> input param access token
+  >>>>  page id list where user have access
+
+(Done , api/user/checkpageaccess)
+
+  4)http://localhost:8080/api/user/detail
+
+  this service can be user to fetch other user details or self user details
+  >>to fetch other user details --param email id this is ok
+  >>to fetch self user details --param will be access tokon
+
+(Done , api/user/find , api/user/modify)
+
+  5) http://localhost:8080/api/user/list
+
+  please allow input param userTypeId and send data on userTypeId basics
+
+(Done , http://localhost:8080/api/user/list?user_type_id=4)
+
+
+  6) need api to check email id/user name is available or not before user add
+
+(Done) 
+
+
+===========18Nov21===========
+
+1)R & D -- pdf creation 
+
+2) dynamic image creation
+
+3)image
