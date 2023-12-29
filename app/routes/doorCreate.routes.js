@@ -1,5 +1,5 @@
 const { authJwt } = require("../middleware");
-const glassTypeController = require("../controllers/doorCreate.controller");
+const doorCreateController = require("../controllers/doorCreate.controlller");
 
 module.exports = function (app) {
   app.use(function (req, res, next) {
@@ -10,14 +10,14 @@ module.exports = function (app) {
     next();
   });
 
-  app.post("/api/glassType/createGlassType",
+  app.post("/api/doorCreate/createdoor",
     [authJwt.verifyToken],
-    glassTypeController.create
+    doorCreateController.create
   );
 
-  app.get("/api/glassType/getGlassType",
+  app.get("/api/doorCreate/getdoor",
     [authJwt.verifyToken],
-    glassTypeController.getList
+    doorCreateController.getList
    );
 
 };
