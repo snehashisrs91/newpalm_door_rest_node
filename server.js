@@ -52,6 +52,7 @@ require('./app/routes/series.routes')(app);
 require('./app/routes/measurementType.routes')(app);
 require('./app/routes/rsoGap.routes')(app);
 require('./app/routes/glassType.routes')(app);
+require('./app/routes/doorCreate.routes')(app);
 require('./app/routes/grilles.routes')(app);
 require('./app/routes/fixedWindowProfiles.routes')(app);
 require('./app/routes/exteriorColours.routes')(app);
