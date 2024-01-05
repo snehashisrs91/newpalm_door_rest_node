@@ -1,8 +1,6 @@
 const { rsoGap } = require("../models");
 const db = require("../models");
 
-
-
 const Op = db.Sequelize.Op;
 const sequelize = db.sequelize;
 
@@ -46,3 +44,32 @@ exports.getList = (req, res) =>{
     res.status(400).send({ message: err.message });
   });
 };
+
+exports.update = (req, res) =>{
+  var reqBody = req.body;
+  if(!reqBody.userId){
+    res.status(500).send({ message: 'Please provide Fixed Door profile id!' });
+  }
+  if(!reqBody.userId){
+    res.status(500).send({ message: 'Please provide Fixed Door profile Name!' });
+  }
+  
+  var updateSql = `UPDATE quotes_master_door SET screen_type='${reqBody?.screen_type || 'NULL'}', modified_by=${req.userId},
+                   modified_date=${'CURRENT_TIMESTAMP'}, door_swing=${reqBody?.door_swing || 0.0}
+                   WHERE id = ${req.userId}`;                         
+       
+       sequelize.query(updateSql)
+          .then(function (result) {              
+            if(result && result.length> 0){
+                res.status(200).send({ message: 'Fixed door profile Updated Successfully!' });
+            }
+            else{
+                res.status(500).send({ message: 'Failed' });
+            }             
+          })
+          .catch(err => {
+            res.status(500).send({ message: err.message });
+          });      
+      
+};
+

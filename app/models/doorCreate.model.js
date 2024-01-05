@@ -10,11 +10,11 @@ module.exports = (sequelize, Sequelize) => {
       framesize_width :{
         type: Sequelize.STRING
       },
-      brickmodulesize_width :{
+      brickmouldsize_width :{
         type: Sequelize.STRING
       },
 
-      brickmodulesize_hight:{
+      brickmouldsize_hight:{
         type: Sequelize.STRING
       },
       roughopenning_hight :{
@@ -72,18 +72,21 @@ module.exports = (sequelize, Sequelize) => {
         type: Sequelize.STRING
       },
       is_active: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       created_by: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       created_date: {
         type: Sequelize.STRING
       },
       modified_by: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       modified_date: {
+        type: Sequelize.STRING
+      },
+      system_dimension_type: {
         type: Sequelize.STRING
       }
 
